@@ -3,4 +3,4 @@
 
 from .app import create_app #.app porque esta en la misma carpeta
 
-APP = create_app
+APP = create_app()
