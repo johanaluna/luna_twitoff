@@ -21,5 +21,4 @@ def predict_user(user1_name, user2_name, tweet_text, cache=None):
         log_reg = LogisticRegression().fit(embeddings, labels)
         cache and cache.set(user_set, pickle.dumps(log_reg))
     tweet_embeddings = BASILICA.embed_sentence(tweet_text, model='twitter')
-    return log_reg.predict(np.array(tweet_embedding).reshape(1, -1))
-    
+    return log_reg.predict(np.array(tweet_embeddings).reshape(1, -1))
